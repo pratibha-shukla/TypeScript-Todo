@@ -1,0 +1,112 @@
+
+body {
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Horizontal Center */
+  align-items: center;     /* Vertical Center - FIX: changed from flex-start */
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;      /* Prevent horizontal scroll */
+}
+
+.todo-container {
+  margin-left: 250px;
+  max-width: 500px;
+  width: 90%;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center; /* Centers the "ToDo List" title */
+}
+
+/* 2. Input Group Centering */
+.input-group {
+  display: flex;
+  justify-content: center; /* Centers the input and button together */
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-group input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  flex: 1; /* Allows input to grow, but stays centered in the group */
+  max-width: 300px;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 3. List Item UI Improvements */
+.todo-list {
+  padding: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  margin-bottom: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.todo-item:hover {
+  border-color: #6366f1;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* 4. Text & Button Spacing */
+.item-text {
+  flex: 1;
+  margin: 0 20px;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  text-align: left; 
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.9;
+}
+
+
+.edit-btn { 
+  background: #6366f1; 
+}
+
+.delete-btn { 
+  background: #ef4444; 
+}
+
+
