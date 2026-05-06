@@ -9,7 +9,7 @@ import "./todo.css";
  * A functional component that manages the core logic for a Todo application.
  * Features include: Create, Read, Update, Delete (CRUD) and completion toggling.
  * 
- * @returns {JSX.Element} The rendered Todo List UI.
+ * @returns {tSX.Element} The rendered Todo List UI.
  */
 export const TodoLogic = () => {
 
