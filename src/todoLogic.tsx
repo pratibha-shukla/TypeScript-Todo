@@ -29,6 +29,7 @@ export const TodoLogic = () => {
     if(!inputValue.trim()) return; // Don't add empty tasks
 
     const newItem: Todo = {
+      // id:crypto.randomUUID(), but id must be String in typeScript
       id:Date.now(),
       todo: inputValue,
       completed: false,

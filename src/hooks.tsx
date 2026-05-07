@@ -1,6 +1,7 @@
 import React, { useReducer, useState, useMemo, useCallback, useEffect } from "react";
 import { InitialTodos } from "./data";
 import { type Todo } from "./types";
+import "./todo.css"; 
 
 
 // 1. useReducer: The "Manager" that handles all logic in one place
@@ -20,7 +21,7 @@ const todoReducer = (state: Todo[], action: any) => {
   }
 };
 
-export const TodoLogic = () => {
+export const HookTodoLogic = () => {
   // --- State & Reducer ---
   const [todos, dispatch] = useReducer(todoReducer, InitialTodos);
   const [inputValue, setInputValue] = useState("");
@@ -60,7 +61,7 @@ export const TodoLogic = () => {
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
-    const newItem: Todo = { id: Date.now(), todo: inputValue, completed: false };
+    const newItem: Todo = { id:  Date.now(), todo: inputValue, completed: false };
     dispatch({ type: "ADD", payload: newItem });
     setInputValue("");
   };
