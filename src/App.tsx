@@ -15,22 +15,26 @@ import "./App.css"
 
 // export default App
 
-import TodoList from "./components/TodoList";
+import TodoLogic from "./components/TodoList"; // Removed { } if it's a default export
 import { withAuth } from "./hoc/withAuth";
-import "./App.css";
+import { withErrorBoundary } from "./hoc/withErrorBoundry"
 
-// 1. Wrap the TodoList with Authentication
-// This version of the component will check for login status before rendering
-const ProtectedTodoList = withAuth(TodoList);
+// Layer 1: Security
+// Fixed: Changed TodoList to TodoLogic to match your import
+const ProtectedTodo = withAuth(TodoLogic);
+
+// Layer 2: Error Protection
+const SafeTodo = withErrorBoundary(ProtectedTodo);
 
 function App() {
   return (
-    <div className="app-main-container">
-      {/* 2. Calling the protected component */}
-      <ProtectedTodoList />
+    <div className="App">
+       <SafeTodo />
     </div>
   );
 }
 
 export default App;
+
+
 
